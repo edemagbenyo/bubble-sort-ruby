@@ -25,6 +25,8 @@ def bubble_sort_by(arr)
       count += 1
       if block_given?
         arr[n], arr[n + 1] = arr[n + 1], arr[n] if yield(arr[n], arr[n + 1]).positive?
+      else
+        raise 'No block given. Please supply a block.'
       end
       n += 1
     end
@@ -32,4 +34,4 @@ def bubble_sort_by(arr)
   arr
 end
 
-bubble_sort_by(%w[hi hello hey]) { |x, y| x.length - y.length }
+p bubble_sort_by(%w[hi hello hey])
