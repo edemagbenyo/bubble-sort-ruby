@@ -6,6 +6,7 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
   DisplayCopNames: true
+  fixer: true
 
 Metrics/LineLength:
   Max: 120
