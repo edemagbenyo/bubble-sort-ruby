@@ -23,15 +23,13 @@ def bubble_sort_by(arr)
     n = 0
     while n < (arr.size - 1 - i)
       count += 1
-      unless block_given?
-        raise 'No block given. Please supply a block.'
-      else
-        arr[n], arr[n + 1] = arr[n + 1], arr[n] if yield(arr[n], arr[n + 1]).positive?
-      end
+      raise 'No block given. Please supply a block.' unless block_given?
+      
+      arr[n], arr[n + 1] = arr[n + 1], arr[n] if yield(arr[n], arr[n + 1]).positive?
       n += 1
     end
   end
   arr
 end
 
-p bubble_sort_by(%w[hi hello hey])
+# p bubble_sort_by(%w[hi hello hey]){|v,w| v.length - w.length}
