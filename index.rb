@@ -23,10 +23,10 @@ def bubble_sort_by(arr)
     n = 0
     while n < (arr.size - 1 - i)
       count += 1
-      if block_given?
-        arr[n], arr[n + 1] = arr[n + 1], arr[n] if yield(arr[n], arr[n + 1]).positive?
-      else
+      unless block_given?
         raise 'No block given. Please supply a block.'
+      else
+        arr[n], arr[n + 1] = arr[n + 1], arr[n] if yield(arr[n], arr[n + 1]).positive?
       end
       n += 1
     end
