@@ -23,11 +23,11 @@ def bubble_sort_by(arr)
     n = 0
     while n < (arr.size - 1 - i)
       count += 1
-      arr[n], arr[n + 1] = arr[n + 1], arr[n]  if yield(arr[n], arr[n + 1]).positive? if block_given?
+      arr[n], arr[n + 1] = arr[n + 1], arr[n] if yield(arr[n], arr[n + 1]).positive? if block_given?
       n += 1
     end
   end
   arr
 end
 
-bubble_sort_by(%w[hi hello hey]){ |x, y| x.length - y.length }
+bubble_sort_by(%w[hi hello hey]) { |x, y| x.length - y.length }
