@@ -11,11 +11,11 @@ Loop through the array
   k.times do |i|
     n = 0
     while n < (arr.size - 1 -i)
-        count +=1
-        if arr[n] > arr[n+1]
-            arr[n],arr[n+1] = arr[n+1], arr[n] 
-        end
-        n+=1
+      count +=1
+      if arr[n] > arr[n+1]
+        arr[n],arr[n+1] = arr[n+1], arr[n] 
+      end
+      n+=1
         
     end
   end
@@ -30,13 +30,13 @@ def bubble_sort_by(arr)
   k.times do |i|
     n = 0
     while n < (arr.size - 1 -i)
-        count +=1
-        if block_given?
-          if yield(arr[n],arr[n+1]).positive?
-              arr[n],arr[n+1] = arr[n+1], arr[n] 
-          end 
-        end
-        n+=1
+      count +=1
+      if block_given?
+        if yield(arr[n],arr[n+1]).positive?
+          arr[n],arr[n+1] = arr[n+1], arr[n] 
+        end 
+      end
+      n+=1
     end
   end
   arr
