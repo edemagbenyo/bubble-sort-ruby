@@ -20,7 +20,7 @@ def bubble_sort_by(arr)
   k = arr.size
   count = 0
   raise 'No block given. Please supply a block.' unless block_given?
-  
+
   k.times do |i|
     n = 0
     while n < (arr.size - 1 - i)
